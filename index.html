@@ -1,18 +1,138 @@
-
 <!doctype html>
 <html lang="en">
 <head>
-    <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.indigo.min.css"
->
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Soham</title>
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/Observer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+    <!-- ScrollSmoother requires ScrollTrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollSmoother.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollToPlugin.min.js"></script>
+
+    <!-- RoughEase, ExpoScaleEase and SlowMo are all included in the EasePack file -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/EasePack.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/CustomEase.min.js"></script>
+    <!-- CustomBounce requires CustomEase -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/CustomBounce.min.js"></script>
+    <!-- CustomWiggle requires CustomEase -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/CustomWiggle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Pixel:ELSH@97.5&family=Space+Grotesk:wght@300..700&display=swap"
+          rel="stylesheet">
+    <style>
+        :root {
+            --accent: #22d3ee;
+        }
+
+        body {
+            background: radial-gradient(650px at 15% 15%, rgba(34, 211, 238, .18), transparent 65%), radial-gradient(700px at 85% 85%, rgba(167, 139, 250, .18), transparent 65%), radial-gradient(500px at 50% 0%, rgba(248, 250, 252, .06), transparent 65%), #05070f;
+            padding: 0;
+            margin: 0;
+            color: white;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 125%;
+        }
+
+        * {
+            font-family: inherit;
+        }
+
+        h1, h2, h3, li, p, div {
+            margin: 0 auto;
+
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+            width: fit-content;
+            font-family: "Geist Pixel", sans-serif;
+            color: var(--accent)
+        }
+
+        header, div.content, div.footer {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(6.9px);
+            -webkit-backdrop-filter: blur(6.9px);
+            padding: 16px;
+        }
+
+        div.content {
+            width: fit-content;
+            margin: 0 auto;
+            height: 80vh;
+            scroll-snap-align: start;
+            animation-name: rotateAnimation;
+            animation-duration: 1ms; /* Firefox requires this to apply the animation */
+            animation-direction: alternate;
+            animation-timeline: scroll(self);
+        }
+
+        div.container {
+            display: flex;
+            scroll-snap-type: y mandatory;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            height: 20%;
+            z-index: 9999999999999999;
+        }
+
+        @keyframes rotateAnimation {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+    </style>
 </head>
 <body>
+<header>
+    <h1>Language Of Chemistry</h1>
+
+</header>
+<br>
+<div class="container">
+
+    <div class="content">
+        <p></p>
+    </div>
+    <div class="content">
+        <p></p>
+    </div>
+    <div class="content">
+        <p></p>
+    </div>
+    <div class="content">
+        <p></p>
+    </div>
+    <div class="content">
+        <p></p>
+    </div>
+    <div class="content">
+        <p></p>
+    </div>
+    <div class="content">
+        <p></p>
+    </div>
+</div>
 
 </body>
+<script>
+    gsap.registerPlugin(Observer,ScrollTrigger,ScrollSmoother,ScrollToPlugin,RoughEase,ExpoScaleEase,SlowMo,CustomEase,CustomBounce,CustomWiggle)
+</script>
 </html>
